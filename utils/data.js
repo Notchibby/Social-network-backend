@@ -57,15 +57,15 @@ const uname = [
 
 const one = [
   
-  'Champ',
-  'Fact',
+  'Champ,',
+  'Fact,',
   'Everybody says',
   'Dang...',
-  'Check it',
-  'Just Saying',
-  'Know this',
+  'Check it,',
+  'Just Saying,',
+  'Know this,',
   'Experts agree',
-  'In my opinion',
+  'In my opinion,',
   
 ];
 
@@ -95,17 +95,17 @@ const three = [
 
 const rctnTxt = [
   '24/7',
-  'can I get an amen?',
-  'go treat yourself',
-  'for reals',
-  'you hidden gem',
-  'mic drop',
-  'according to CNN',
-  'snuggle bear',
-  'now lets dance',
-  'thats just science',
-  'so get used to it',
-  'say it again !!!',
+  'Can I get an amen?',
+  'Go treat yourself',
+  'For reals !!',
+  'You hidden gem',
+  'Mic drop',
+  'According to CNN',
+  'Snuggle bear',
+  'Now lets dance',
+  'Thats just science',
+  'So get used to it',
+  'Say it again !!!',
 ]
 
 const domain = [
