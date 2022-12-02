@@ -1,5 +1,10 @@
 const { Schema, model} = require('mongoose');
 
+var validateEmail = function(email) {
+  var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return re.test(email)
+};
+
 const userSchema = new Schema(
   {
     username: {
@@ -29,7 +34,7 @@ const userSchema = new Schema(
 );
 
 // creates virutual thart retrieves friendcount
-userSchema.virtual('friendCount').get (function() {
+userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 })
 

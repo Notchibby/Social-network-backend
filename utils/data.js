@@ -1,4 +1,4 @@
-const names = [
+const uname = [
   'Aaran',
   'Aaren',
   'Aarez',
@@ -13,25 +13,6 @@ const names = [
   'Abaan',
   'Abbas',
   'Abdallah',
-  'Abdalroof',
-  'Abdihakim',
-  'Abdirahman',
-  'Abdisalam',
-  'Abdul',
-  'Abdul-Aziz',
-  'Abdulbasir',
-  'Abdulkadir',
-  'Abdulkarem',
-  'Smith',
-  'Jones',
-  'Coollastname',
-  'enter_name_here',
-  'Ze',
-  'Zechariah',
-  'Zeek',
-  'Zeeshan',
-  'Zeid',
-  'Zein',
   'Zen',
   'Zendel',
   'Zenith',
@@ -74,45 +55,104 @@ const names = [
   'Parker',
 ];
 
-const appDescriptions = [
-  'Decision Tracker',
-  'Find My Phone',
-  'Learn Piano',
-  'Starbase Defender',
-  'Tower Defense',
-  'Monopoly Money Manager',
-  'Movie trailers',
-  'Hello world',
-  'Stupid Social Media App',
-  'Notes',
-  'Messages',
-  'Email',
-  'Compass',
-  'Firefox',
-  'Running app',
-  'Cooking app',
-  'Poker',
-  'Deliveries',
+const one = [
+  
+  'Champ',
+  'Fact',
+  'Everybody says',
+  'Dang...',
+  'Check it',
+  'Just Saying',
+  'Know this',
+  'Experts agree',
+  'In my opinion',
+  
 ];
+
+const two = [
+  'all of y\'all',
+  'everything you do',
+  'you life\'s journey',
+  'your DNA',
+  'the way you roll',
+  'that saucy personality',
+  'that brain of yours',
+  'your presence today',
+]
+
+const three = [
+  'has serious game',
+  'rain\s magic',
+  'deserves a Nobel Prize',
+  'breeds miracles',
+  'just shimmers',
+  'is a national tressure',
+  'roars like a lion',
+  'makes birds sing',
+  'should be taught in schools',
+  'is 100% legit'
+]
+
+const rctnTxt = [
+  '24/7',
+  'can I get an amen?',
+  'go treat yourself',
+  'for reals',
+  'you hidden gem',
+  'mic drop',
+  'according to CNN',
+  'snuggle bear',
+  'now lets dance',
+  'thats just science',
+  'so get used to it',
+  'say it again !!!',
+]
+
+const domain = [
+  '@ yahoo.com',
+  '@ gmail.com',
+  '@ hotmail.com',
+  '@ test.com',
+  '@ yeehaw.com',
+  '@ public.com',
+]
+
+const time = '2020-05-20T03:54:38.106+00:00';
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random full name
-const getRandomName = () =>
-  `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+// Gets a random number of reactions
+const getRandomRctns = (int) => {
+  const datas = [];
+  for (let i = 0; i < int; i++) {
+    datas.push({
+      reactionBody: getRandomArrItem(rctnTxt),
+      username: getRandomArrItem(uname),
+      createdAt: time,
+    });
+  }
+  return datas;
+};
 
-// Function to generate random assignments that we can add to student object.
-const getRandomAssignments = (int) => {
+const getRandomThoughts = (int) => {
   const results = [];
   for (let i = 0; i < int; i++) {
+    // generates a random number between 1 and 5
+    const num = Math.floor(Math.random() * 5);
     results.push({
-      assignmentName: getRandomArrItem(appDescriptions),
-      score: Math.floor(Math.random() * (99 - 70 + 1) + 70),
+      thoughtText: `${getRandomArrItem(one)} ${getRandomArrItem(two)} ${getRandomArrItem(three)}`,
+      createdAt: time,
+      username: getRandomArrItem(uname),
+      reactions: getRandomRctns(num)
     });
   }
   return results;
 };
 
+
+
+
+
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomAssignments };
+module.exports = {getRandomArrItem, getRandomThoughts, uname, one, two, three, domain, time};
