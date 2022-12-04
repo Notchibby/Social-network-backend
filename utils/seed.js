@@ -20,16 +20,12 @@ connection.once('open', async () => {
  const origThought = await Thought.collection.insertMany(allThoughts)
 
   const getNumberOfThought = (chosenUsername) => {
-    const num = Math.floor(Math.random() * 3);
     const values = []
     for (let i = 0; i < allThoughts.length; i++) {
       if(allThoughts[i].username === chosenUsername) {
         values.push(origThought.insertedIds[i])
-
-        if(values.length > num){
-          return values
-        }
       }
+      return values
     }
   }
 
