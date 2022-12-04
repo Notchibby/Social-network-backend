@@ -33,17 +33,24 @@ connection.once('open', async () => {
   for (let i = 0; i < 7; i++) {
     // Get some random assignment objects using a helper function that we imported from ./data
 
-    const username = getRandomArrItem(uname);
-    const email = `${username} ${getRandomArrItem(domain)}`
+    const username = uname[i];
+    const email = `${username}${getRandomArrItem(domain)}`
     const thoughts =  getNumberOfThought()
     const friends = []
-
-    allUsers.push({
+    const friend = getRandomArrItem(allUsers)
+    if(i > 0){
+      console.log(friend)
+      friends.push(friend.insertedId)
+    }
+    console.log(username, email, thoughts)
+    const newUser = await User.collection.insertOne({
       username,
       email,
       thoughts,
       friends,
-    });
+    })
+
+    allUsers.push(newUser);
   }
   // console.log(allUsers)
   
@@ -52,7 +59,7 @@ connection.once('open', async () => {
  await Thought.collection.insertMany(allThoughts)
 
   // Add students to the collection and await the results
-  await User.collection.insertMany(allUsers);
+  // await User.collection.insertMany(allUsers);
 
   // Log out the seed data to indicate what should appear in the database
   console.info('Seeding complete! 🌱');

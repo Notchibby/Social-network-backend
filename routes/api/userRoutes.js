@@ -13,9 +13,9 @@ const {addFriend, removeFriend }= require('../../controllers/friendController.js
 router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
-router
+router 
   .route('/:userId')
-  .get(getSingleUser)
+  .get(getSingleUser) 
   .put(updateUser)
   .delete(deleteUser);
 

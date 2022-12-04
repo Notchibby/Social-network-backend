@@ -9,7 +9,7 @@ module.exports = {
   },
   // Get a user
   getSingleUser(req, res) {
-    User.findOne({ _id: req.params.id })
+    User.findOne({ _id: req.params.userId })
     .populate('thoughts')
     .populate('friends')
       .select('-__v')
@@ -23,7 +23,7 @@ module.exports = {
   // Create a user
   createUser(req, res) {
     User.create(req.body)
-      .then((course) => res.json(course))
+      .then((user) => res.json(user))
       .catch((err) => {
         console.log(err);
         return res.status(500).json(err);
@@ -31,7 +31,7 @@ module.exports = {
   },
   // Delete a user
   deleteUser(req, res) {
-    User.findOneAndDelete({ _id: req.params.courseId })
+    User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })

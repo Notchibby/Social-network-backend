@@ -109,18 +109,18 @@ const rctnTxt = [
 ]
 
 const domain = [
-  '@ yahoo.com',
-  '@ gmail.com',
-  '@ hotmail.com',
-  '@ test.com',
-  '@ yeehaw.com',
-  '@ public.com',
+  '@yahoo.com',
+  '@gmail.com',
+  '@hotmail.com',
+  '@test.com',
+  '@yeehaw.com',
+  '@public.com',
 ]
 
 const time = '2020-05-20T03:54:38.106+00:00';
 
 // Get a random item given an array
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)] ;
 
 // Gets a random number of reactions
 const getRandomRctns = (int) => {
