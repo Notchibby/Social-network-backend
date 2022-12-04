@@ -1,48 +1,13 @@
+const mongoose = require('mongoose')
+const rctnId = mongoose.Types.ObjectId
 const uname = [
-  'Aaran',
-  'Aaren',
-  'Aarez',
-  'Aarman',
-  'Aaron',
-  'Aaron-James',
-  'Aarron',
-  'Aaryan',
   'Aaryn',
-  'Aayan',
-  'Aazaan',
-  'Abaan',
-  'Abbas',
-  'Abdallah',
-  'Zen',
-  'Zendel',
-  'Zenith',
-  'Zennon',
-  'Zeph',
-  'Zerah',
-  'Zhen',
-  'Zhi',
-  'Zhong',
-  'Zhuo',
-  'Zi',
-  'Zidane',
-  'Zijie',
-  'Zinedine',
-  'Zion',
-  'Zishan',
-  'Ziya',
-  'Ziyaan',
-  'Zohaib',
-  'Zohair',
-  'Zoubaeir',
-  'Zubair',
-  'Zubayr',
   'Zuriel',
   'Xander',
   'Jared',
   'Courtney',
   'Gillian',
   'Clark',
-  'Jared',
   'Grace',
   'Kelsey',
   'Tamar',
@@ -130,6 +95,7 @@ const getRandomRctns = (int) => {
       reactionBody: getRandomArrItem(rctnTxt),
       username: getRandomArrItem(uname),
       createdAt: time,
+      reactionId: new rctnId
     });
   }
   return datas;
@@ -140,10 +106,11 @@ const getRandomThoughts = (int) => {
   for (let i = 0; i < int; i++) {
     // generates a random number between 1 and 5
     const num = Math.floor(Math.random() * 5);
+    const val = Math.floor(Math.random() * 18)
     results.push({
       thoughtText: `${getRandomArrItem(one)} ${getRandomArrItem(two)} ${getRandomArrItem(three)}`,
       createdAt: time,
-      username: getRandomArrItem(uname),
+      username: uname[val],
       reactions: getRandomRctns(num)
     });
   }
