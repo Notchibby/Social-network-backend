@@ -16,12 +16,15 @@ connection.once('open', async () => {
   // generates 30 random thoughts
   const allThoughts = getRandomThoughts(30);
 
+  // Add thought collection and await results
+ const origThought = await Thought.collection.insertMany(allThoughts)
+
   const getNumberOfThought = (chosenUsername) => {
     const num = Math.floor(Math.random() * 3);
     const values = []
     for (let i = 0; i < allThoughts.length; i++) {
-      if(allThoughts[i].username = chosenUsername) {
-        values.push(allThoughts[i])
+      if(allThoughts[i].username === chosenUsername) {
+        values.push(origThought.insertedIds[i])
 
         if(values.length > num){
           return values
@@ -43,10 +46,8 @@ connection.once('open', async () => {
     const friends = []
     const friend = getRandomArrItem(allUsers)
     if(i > 0){
-      console.log(friend)
       friends.push(friend.insertedId)
     }
-    console.log(username, email, thoughts)
     const newUser = await User.collection.insertOne({
       username,
       email,
@@ -56,11 +57,7 @@ connection.once('open', async () => {
 
     allUsers.push(newUser);
   }
-  // console.log(allUsers)
   
- 
-  // Add thought collection and await results
- await Thought.collection.insertMany(allThoughts)
 
   // Log out the seed data to indicate what should appear in the database
   console.info('Seeding complete! 🌱');
