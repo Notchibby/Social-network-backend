@@ -1,7 +1,7 @@
 # Social-network-server [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## Introduction
-This project aims to promote and reinforce our understanding of creating a functional server using the a non relational database aka mongoose. This project models a socail network server in regards to how the users have different thoughts which contains reactions from other users. 
+This project aims to promote and reinforce our understanding of creating a functional server using a non relational database aka mongoose. This project models a social network server in regards to how the users have different thoughts which contains reactions from other users. 
 
 ## Table of Contents
 

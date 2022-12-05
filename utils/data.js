@@ -42,7 +42,7 @@ const one = [
 const two = [
   'all of y\'all',
   'everything you do',
-  'you life\'s journey',
+  'your life\'s journey',
   'your DNA',
   'the way you roll',
   'that saucy personality',
@@ -133,4 +133,4 @@ const getRandomThoughts = (int) => {
 
 
 // Export the functions for use in seed.js
-module.exports = {getRandomArrItem, getRandomThoughts, uname, one, two, three, domain, time};
+module.exports = {getRandomArrItem, getRandomThoughts, uname, domain};
