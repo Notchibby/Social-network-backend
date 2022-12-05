@@ -24,9 +24,9 @@ connection.once('open', async () => {
     for (let i = 0; i < allThoughts.length; i++) {
       if(allThoughts[i].username === chosenUsername) {
         values.push(origThought.insertedIds[i])
-      }
-      return values
+      } 
     }
+    return values
   }
 
   // Create empty array to hold the users generated

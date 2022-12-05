@@ -10,7 +10,6 @@ module.exports = {
   // Get a single thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
-    .populate('reactions')
       .select('-__v')
       .then((thought) =>
         !thought
