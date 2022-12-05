@@ -82,7 +82,7 @@ const domain = [
   '@public.com',
 ]
 
-const time = '2020-05-20T03:54:38.106+00:00';
+const time = 'Jan 03, 2020 at 03:30 pm';
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)] ;
