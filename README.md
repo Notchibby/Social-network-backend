@@ -19,7 +19,9 @@ The server can be started by typing in the command 'npm run dev' or 'node index.
 
 
 ## Screenshots
-![screenshot-of-the-application-to-add-comment](https://github.com/Notchibby/Tech-blog-posts/blob/main/assets/images/addcomment.png)
+![screenshot-of-the-application-to-get-allthoughts](https://github.com/Notchibby/Social-network-backend/blob/main/assets/images/allthoughts.png)
+
+![screenshot-of-the-application-to-get-singleuser](https://github.com/Notchibby/Social-network-backend/blob/main/assets/images/singleuser.png)
 
 ## Dependencies
 
