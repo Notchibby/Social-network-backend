@@ -37,6 +37,7 @@ My other applications can be viewed at my github repository located at https://g
 
 ## Link to walkthrough video
 
+https://drive.google.com/file/d/1alTwUQq14kYlfRrixmIupDPHuQlB5d4f/view
 
 ## License
 Licenced under the [GNU GPLv3](https://www.gnu.org/licenses/agpl-3.0) license.
