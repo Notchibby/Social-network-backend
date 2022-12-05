@@ -1,6 +1,10 @@
+// Initializing mongoose and reaction schema
 const { Schema, model } = require('mongoose');
 const reactions = require('./Reaction')
+
+// Initializing dependecy used to format date
 const moment = require('moment')
+
 // Schema to create a thought model
 const thoughtSchema = new Schema(
   {
@@ -32,6 +36,7 @@ const thoughtSchema = new Schema(
   }
 );
 
+// creates virtual that retrieves reaction count
 thoughtSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 })

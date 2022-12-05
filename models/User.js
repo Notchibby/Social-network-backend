@@ -1,10 +1,13 @@
+// Initializing mongoose and its methods
 const { Schema, model} = require('mongoose');
 
+// function used to check for valid email
 var validateEmail = function(email) {
   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return re.test(email)
 };
 
+// Schema used to create user model
 const userSchema = new Schema(
   {
     username: {

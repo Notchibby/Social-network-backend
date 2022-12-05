@@ -1,6 +1,10 @@
+// Initializing mongoose and its methods
 const { Schema, Types } = require('mongoose');
+
+// initializing dependency used to format date
 const moment = require('moment')
 
+// Schema to create reactions
 const reactionSchema = new Schema(
   {
     reactionId: {

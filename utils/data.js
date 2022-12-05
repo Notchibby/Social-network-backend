@@ -1,5 +1,8 @@
+// Initializing mongoose and its methods
 const mongoose = require('mongoose')
 const rctnId = mongoose.Types.ObjectId
+
+// array of usernames
 const uname = [
   'Aaryn',
   'Zuriel',
@@ -20,6 +23,7 @@ const uname = [
   'Parker',
 ];
 
+// array of parts of thoughts
 const one = [
   
   'Champ,',
@@ -34,6 +38,7 @@ const one = [
   
 ];
 
+// array of parts of thoughts
 const two = [
   'all of y\'all',
   'everything you do',
@@ -45,6 +50,7 @@ const two = [
   'your presence today',
 ]
 
+// array of parts of thoughts
 const three = [
   'has serious game',
   'rain\s magic',
@@ -58,6 +64,7 @@ const three = [
   'is 100% legit'
 ]
 
+// array of reactions
 const rctnTxt = [
   '24/7',
   'Can I get an amen?',
@@ -73,6 +80,7 @@ const rctnTxt = [
   'Say it again !!!',
 ]
 
+// array of email domains
 const domain = [
   '@yahoo.com',
   '@gmail.com',
@@ -82,6 +90,7 @@ const domain = [
   '@public.com',
 ]
 
+// time
 const time = 'Jan 03, 2020 at 03:30 pm';
 
 // Get a random item given an array
@@ -101,11 +110,13 @@ const getRandomRctns = (int) => {
   return datas;
 };
 
+// Generates a number of thougths given a value
 const getRandomThoughts = (int) => {
   const results = [];
   for (let i = 0; i < int; i++) {
     // generates a random number between 1 and 5
     const num = Math.floor(Math.random() * 5);
+    // generates a random number between 1 and 18
     const val = Math.floor(Math.random() * 18)
     results.push({
       thoughtText: `${getRandomArrItem(one)} ${getRandomArrItem(two)} ${getRandomArrItem(three)}`,
