@@ -22,7 +22,6 @@ const reactionSchema = new Schema(
       get: value => moment(value).format("MMM DD, YYYY [at] hh:mm a")
     },
   },
-  {timestamps: true},
   {
     toJSON: {
       getters: true,
